@@ -1,2 +1,19 @@
-<h1>Books#edit</h1>
-<p>Find me in app/views/books/edit.html.erb</p>
+<h1>Editing Book</h1>
+  <%= form_with model:@book, local:true do |f| %>
+  <!--form_with model:インスタンス変数 do ||-->
+  <!--Railsは渡されたモデル(@blog)の中身が空であることから、createメソッドを呼び出すことを判断-->
+    <h4>Title</h4>
+    <%= f.text_field :title %>
+    <h4>Body</h4>
+    <%= f.text_area :body %>
+    <h4></h4>
+    <%= f.submit 'Update Book' %>
+    <% end %>
+    <p>
+    <%= link_to "Show", book_path(@book.id) %>
+    <!--idを持った変数を引数に渡すことで、正しいパスとなる-->
+    <span>|</span>
+    <%= link_to "Back", books_path(@book.id) %>
+    <!--methodをdestroyに変更することで削除でき、一覧画面に戻るpathとなる-->
+    <!--destroyアクションを使用して削除機能を実装しているが、使用するHTTPメソッドはdelete-->
+    </p>
