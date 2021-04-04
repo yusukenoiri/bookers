@@ -13,3 +13,75 @@
  *= require_tree .
  *= require_self
  */
+/* ブラウザがそれぞれ持っているCSSをリセットするための記述 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: verdana, arial, helvetica, sans-serif;
+}
+
+/*index page layout*/
+.index-head {
+  margin: 0.67em 0.67em 0.1em 0.67em;
+}
+
+table {
+  font-size: 13px;
+  line-height: 18px;
+  margin: 0px 33px 20px 33px;
+  border-spacing: 10px;
+}
+
+.index-head-new {
+  line-height: 18px;
+  margin: 0px 33px;
+}
+
+.index-new {
+  margin:33px;
+}
+
+.index-text-box{
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+/*show page layout*/
+.show-body {
+  font-size: 13px;
+  line-height: 18px;
+  margin: 33px;
+}
+
+.show-title {
+  margin: 33px;
+}
+
+#notice {
+  color:green;
+  margin: 33px;
+}
+/*idの時は#??*/
+
+/*edit page layout*/
+.edit-body {
+  font-size: 13px;
+  line-height: 18px;
+  margin: 33px;
+}
+
+.edit-body h1{
+  margin-bottom: 18px;
+}
+
+/*top page layout*/
+.toppage-body {
+  font-size: 13px;
+  line-height: 18px;
+  margin: 33px;
+}
+
+.top-p {
+  margin:33px;
+}

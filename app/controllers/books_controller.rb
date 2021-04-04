@@ -13,7 +13,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-    flash[:notice] = "Book was succesfully created."
+    flash[:notice] = "Book was successfully created."
     redirect_to book_path(@book.id)
     # redirectはコントローラーを通す
     else
@@ -21,7 +21,7 @@ class BooksController < ApplicationController
       # コントローラーを通さないので、indexの中身を定義するため
       render 'index'
       # renderはコントローラーを通さない,renderされた後にindex.htmlにいく、if error文に引っかかり表示される
-   end
+    end
   end
 
   def edit
@@ -33,7 +33,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
-    flash[:notice] = "Book was succesfully updated."
+    flash[:notice] = "Book was successfully updated."
     redirect_to book_path(@book.id)
     else
     render 'edit'
@@ -42,8 +42,12 @@ class BooksController < ApplicationController
 
   def destroy
     book = Book.find(params[:id])
-    book.destroy
+    if book.destroy
+    flash[:notice] = "Book was successfully destroyed."
     redirect_to books_path
+    else
+    render 'index'
+    end
   end
 
   private

@@ -1,21 +1,24 @@
-<%= flash[:notice] %>
+<p id="notice"><%= flash[:notice] %></p>
 
-<p class="show-title">
-    <strong>Title:</strong>
-    <!--内容の重要性、重大性、または緊急性が高いテキストを表し、太字になる-->
-    <span><%= @book.title %></span>
-</p>
-<p class="show-title">
-    <strong>Body:</strong>
-    <!--横並びdisplay:blockのようにもなる？-->
-    <span><%= @book.body %></span>
-</p>
-
-<p>
-    <%= link_to "Edit", edit_book_path(@book.id) %>
-    <!--idを持った変数を引数に渡すことで、正しいパスとなる-->
-    <span>|</span>
-    <%= link_to "Back", books_path(@book.id) %>
-    <!--methodをdestroyに変更することで削除でき、一覧画面に戻るpathとなる-->
-    <!--destroyアクションを使用して削除機能を実装しているが、使用するHTTPメソッドはdelete-->
-</p>
+<body class="show-body">
+    
+    <p class="show-title">
+        <strong>Title:</strong>
+        <!--内容の重要性、重大性、または緊急性が高いテキストを表し、太字になる-->
+        <span><%= @book.title %></span>
+    </p>
+    <p class="show-title">
+        <strong>Body:</strong>
+        <!--横並びdisplay:blockのようにもなる？-->
+        <span><%= @book.body %></span>
+    </p>
+    
+    <p>
+        <%= link_to "Edit", edit_book_path(@book.id) %>
+        <!--idを持った変数を引数に渡すことで、正しいパスとなる-->
+        <span>|</span>
+        <%= link_to "Back", books_path %>
+        <!--methodをdestroyに変更することで削除でき、一覧画面に戻るpathとなる-->
+        <!--destroyアクションを使用して削除機能を実装しているが、使用するHTTPメソッドはdelete-->
+    </p>
+</body>
